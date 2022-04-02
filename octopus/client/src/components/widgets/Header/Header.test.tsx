@@ -11,9 +11,9 @@ describe('Header', () => {
     // Act
 
     // Assert
-    const Octopuslogo = screen.getByTitle('Octopus Energy logo');
-    expect(Octopuslogo).toBeInTheDocument();
-    
+    const octopusLogo = screen.getByTitle('Octopus Energy logo');
+    expect(octopusLogo).toBeInTheDocument();
+
     const BasketIcon = screen.getByTitle('Basket Icon');
     expect(BasketIcon).toBeInTheDocument();
   });
