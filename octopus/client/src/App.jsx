@@ -1,7 +1,12 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Layout } from "./components/layout";
+import { ProductContainer } from "./containers/ProductContainer";
 const App = () => {
-  return <Container>Octo App</Container>;
+  return (
+    <Layout>
+      <ProductContainer />
+    </Layout>
+  );
 };
 
 export default App;
