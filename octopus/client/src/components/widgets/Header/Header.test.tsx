@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import { Header } from '.';
+import { Header } from './Header';
 
 describe('Header', () => {
   it('should render Header componet with octopus logo and basket icon', async () => {

@@ -4,7 +4,7 @@ import { BasketIcon, OctopusLogo } from "../../../assets";
 
 export const Header: React.FC = () => {
   return (
-    <Box sx={{ display: "flex", width: "100%", background: "#050f2a" }}>
+    <Box sx={{ display: "flex", width: "100%", height: '300px', background: "#050f2a" }}>
       <SvgIcon
         sx={{ marginY: 1, width: 200, color: "white" }}
         viewBox="0 0 470.6667 64"
