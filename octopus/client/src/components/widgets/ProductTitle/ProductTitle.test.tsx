@@ -3,11 +3,11 @@ import { screen, render } from "@testing-library/react";
 import { ProductTitle } from "./ProductTitle";
 import { mockData } from "./ProductTitle.mockData";
 
-describe("Header", () => {
+describe("Product Title", () => {
   it("should render ProductTitle componet with a title and subTitle", async () => {
     // Arrange
-    const _expectedTitle = "Energy saving dimmer switch";
-    const _expectedSubTitle = "white // Packet of 4";
+    const expectedTitle = mockData.title;
+    const expectedSubTitle = mockData.subTitle;
 
     render(
       <ProductTitle
@@ -19,9 +19,9 @@ describe("Header", () => {
     // Act
 
     // Assert
-    const title = screen.getByText(_expectedTitle);
-    const subTitle = screen.getByText(_expectedSubTitle);
-    expect(title).toBeInTheDocument();
-    expect(subTitle).toBeInTheDocument();
+    const title = screen.getByText(mockData.title);
+    const subTitle = screen.getByText(mockData.subTitle);
+    expect(title).toBe(expectedTitle);
+    expect(subTitle).toBe(expectedSubTitle);
   });
 });
