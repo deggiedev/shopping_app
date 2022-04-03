@@ -6,8 +6,8 @@ import { mockData } from "./ProductTitle.mockData";
 describe("Product Title", () => {
   it("should render ProductTitle componet with a title and subTitle", async () => {
     // Arrange
-    const expectedTitle = mockData.title;
-    const expectedSubTitle = mockData.subTitle;
+    // const expectedTitle = mockData.title;
+    // const expectedSubTitle = mockData.subTitle;
 
     render(
       <ProductTitle
@@ -21,7 +21,7 @@ describe("Product Title", () => {
     // Assert
     const title = screen.getByText(mockData.title);
     const subTitle = screen.getByText(mockData.subTitle);
-    expect(title).toBe(expectedTitle);
-    expect(subTitle).toBe(expectedSubTitle);
+    expect(title).toBeInTheDocument();
+    expect(subTitle).toBeInTheDocument();
   });
 });
