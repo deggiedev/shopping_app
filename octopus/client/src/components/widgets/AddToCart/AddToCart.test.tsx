@@ -14,7 +14,7 @@ describe("Add To Cart", () => {
 
     // Assert
     const price = screen.getByText(mockData.price);
-    expect(price).toBe(expectedPrice);
+    expect(price).toBeInTheDocument;
   });
 
   it("should render <AddToCart /> component with a button showing the correct text", async () => {
@@ -26,7 +26,7 @@ describe("Add To Cart", () => {
 
     // Assert
     expect(
-      screen.getByRole("button", { name: /Add to cart/i })
+      screen.getByRole("button", { name: /Add to cart/i }) //fix typing by upgrading react testing library
     ).toBeInTheDocument();
   });
 
