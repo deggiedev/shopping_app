@@ -11,13 +11,20 @@ export const AddToCart: React.FC<Props> = ({ price }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        padding: 2,
+        paddingX: 2,
+        paddingBottom: 2.5,
+        paddingTop: 1,
         color: "white",
         background: "#050f2a",
       }}
     >
       <Box
-        sx={{ marginX: 2.5, display: "flex", justifyContent: "space-between", alignItems: "center"}}
+        sx={{
+          marginX: 2.5,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
         <Typography
           sx={{
@@ -31,14 +38,16 @@ export const AddToCart: React.FC<Props> = ({ price }) => {
           {price}
         </Typography>
         <div data-testid="quantity-actions">
-          <QuantityActions quantity={'1'} />
+          <QuantityActions quantity={"1"} />
         </div>
       </Box>
       <Button
+        aria-label="add-to-cart"
         size="large"
         sx={{
           textTransform: "none",
           background: "#fb1a7b",
+          "&:hover": { background: "#fb1a7b" },
           marginX: 2.5,
           marginTop: 2,
           lineHeight: "1.25",

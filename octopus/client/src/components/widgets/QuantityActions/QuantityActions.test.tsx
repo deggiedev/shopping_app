@@ -3,7 +3,7 @@ import { screen, render } from "@testing-library/react";
 import { QuantityActions } from "./QuantityActions";
 import { mockData } from "./QuantityActions.mockData";
 
-describe("QunatityActions", () => {
+describe("QuantityActions", () => {
   it("should render <QuantityActinos/> componet with two buttons showing the correct plus and minus symbols", async () => {
     // Arrange
 

@@ -26,7 +26,7 @@ describe("Add To Cart", () => {
 
     // Assert
     expect(
-      screen.getByRole("button", { name: /Add to cart/i }) //fix typing by upgrading react testing library
+      screen.getByRole("button", { name: /Add-to-cart/i })
     ).toBeInTheDocument();
   });
 
