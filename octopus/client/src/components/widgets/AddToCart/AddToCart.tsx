@@ -31,7 +31,7 @@ export const AddToCart: React.FC<Props> = ({ price }) => {
           {price}
         </Typography>
         <div data-testid="quantity-actions">
-          <QuantityActions />
+          <QuantityActions quantity={'1'} />
         </div>
       </Box>
       <Button
