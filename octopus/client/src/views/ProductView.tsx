@@ -7,6 +7,7 @@ import { mockData } from "../components/widgets/Description/Description.mockData
 import { Description } from "../components/widgets/Description";
 import { Footer } from "../components/widgets/Footer/Footer";
 import { Specifications } from "../components/widgets/Specifications/Specifications";
+import { mockSpecifications } from "../components/widgets/Specifications/Specifications.mockData";
 
 export const ProductView: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ export const ProductView: React.FC = () => {
       />
       <AddToCart price={'12.99'}/>
       <Description description={mockData.description}/>
-      <Specifications/>
+      <Specifications specifications={mockSpecifications.specifications}/>
       <Footer/>
     </Box>
   );
