@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react';
 import { Header } from './Header';
 
 describe('Header', () => {
-  it('should render Header componet with octopus logo and basket icon', async () => {
+  it('should render Header component with octopus logo and basket icon', async () => {
     // Arrange
 
     render(<Header></Header>);

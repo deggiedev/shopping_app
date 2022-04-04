@@ -3,7 +3,7 @@ import { screen, render } from "@testing-library/react";
 import { Footer } from "./Footer";
 import { mockData } from "./Footer.mockData";
 
-describe("Header", () => {
+describe("Footer", () => {
   it("should render Footer correct company information", async () => {
     // Arrange
     const companyInfo = mockData.companyInfo;

@@ -4,7 +4,7 @@ import { ProductTitle } from "./ProductTitle";
 import { mockData } from "./ProductTitle.mockData";
 
 describe("Product Title", () => {
-  it("should render ProductTitle componet with a title and subTitle", async () => {
+  it("should render ProductTitle component with a title and subTitle", async () => {
     // Arrange
     // const expectedTitle = mockData.title;
     // const expectedSubTitle = mockData.subTitle;

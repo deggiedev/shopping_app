@@ -4,7 +4,7 @@ import { QuantityActions } from "./QuantityActions";
 import { mockData } from "./QuantityActions.mockData";
 
 describe("QuantityActions", () => {
-  it("should render <QuantityActinos/> componet with two buttons showing the correct plus and minus symbols", async () => {
+  it("should render <QuantityActinos/> component with two buttons showing the correct plus and minus symbols", async () => {
     // Arrange
 
     render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
@@ -18,7 +18,7 @@ describe("QuantityActions", () => {
     expect(minusButton).toBeInTheDocument();
   });
 
-  it("should render <QuantityActinos/> componet with the correct label", async () => {
+  it("should render <QuantityActinos/> component with the correct label", async () => {
     // Arrange
     const expectedText = 'QTY'
     render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
@@ -30,7 +30,7 @@ describe("QuantityActions", () => {
     expect(text).toBeInTheDocument();
   });
 
-  it("should render <QuantityActinos/> componet with the correct value", async () => {
+  it("should render <QuantityActinos/> component with the correct value", async () => {
     // Arrange
     const expectedValue = mockData.quantity
     render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
