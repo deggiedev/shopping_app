@@ -1,13 +1,12 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import { QuantityActions } from "./QuantityActions";
-import { mockData } from "./QuantityActions.mockData";
 
 describe("QuantityActions", () => {
-  it("should render <QuantityActinos/> component with two buttons showing the correct plus and minus symbols", async () => {
+  it("should render <QuantityActions/> component with two buttons showing the correct plus and minus symbols", async () => {
     // Arrange
 
-    render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
+    render(<QuantityActions></QuantityActions>);
 
     // Act
 
@@ -18,27 +17,15 @@ describe("QuantityActions", () => {
     expect(minusButton).toBeInTheDocument();
   });
 
-  it("should render <QuantityActinos/> component with the correct label", async () => {
+  it("should render <QuantityActions/> component with the correct label", async () => {
     // Arrange
     const expectedText = 'QTY'
-    render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
+    render(<QuantityActions></QuantityActions>);
 
     // Act
 
     // Assert
     const text = screen.getByText('QTY')
     expect(text).toBeInTheDocument();
-  });
-
-  it("should render <QuantityActinos/> component with the correct value", async () => {
-    // Arrange
-    const expectedValue = mockData.quantity
-    render(<QuantityActions quantity={mockData.quantity}></QuantityActions>);
-
-    // Act
-    
-    // Assert
-    const quantity = screen.getByText(mockData.quantity);
-    expect(quantity).toBeInTheDocument();
   });
 });

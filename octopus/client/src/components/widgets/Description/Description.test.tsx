@@ -6,7 +6,6 @@ import { mockData } from './Description.mockData';
 describe('Description', () => {
   it('should render Description component with correct text from description', async () => {
     // Arrange
-    // const expectedDescription = mockData.description;
     render(<Description description={mockData.description}></Description>);
 
     // Act
