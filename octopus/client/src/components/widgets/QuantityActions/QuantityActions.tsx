@@ -3,7 +3,17 @@ import { Box, Button, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-export const QuantityActions: React.FC = () => {
+interface Props {
+  quantity: number;
+  handleIncrease: () => void;
+  handleDecrease: () => void;
+}
+
+export const QuantityActions: React.FC<Props> = ({
+  quantity,
+  handleIncrease,
+  handleDecrease,
+}) => {
   return (
     <Box>
       <Typography sx={{ textAlign: "center", color: "#345689" }}>
@@ -11,6 +21,7 @@ export const QuantityActions: React.FC = () => {
       </Typography>
       <Box display="flex" justifyContent="space-evenly">
         <Button
+          onClick={handleDecrease}
           aria-label="minus-button"
           disableRipple
           size="small"
@@ -26,6 +37,7 @@ export const QuantityActions: React.FC = () => {
         >
           <RemoveIcon sx={{ fontSize: "large" }} />
         </Button>
+       
         <Typography
           data-testid="quantity"
           sx={{
@@ -34,11 +46,15 @@ export const QuantityActions: React.FC = () => {
             fontFamily: "Gotham",
             fontWeight: 900,
             color: "white",
+            minWidth: '45px',
+            textAlign: "center",
           }}
         >
-          1
+          {quantity}
         </Typography>
+      
         <Button
+          onClick={handleIncrease}
           aria-label="plus-button"
           size="small"
           variant="contained"

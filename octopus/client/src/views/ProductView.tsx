@@ -9,7 +9,16 @@ import { Footer } from "../components/widgets/Footer/Footer";
 import { Specifications } from "../components/widgets/Specifications/Specifications";
 import { mockSpecifications } from "../components/widgets/Specifications/Specifications.mockData";
 
-export const ProductView: React.FC = () => {
+interface Props {
+  quantity: number;
+  handleIncrease: () => void;
+  handleDecrease: () => void;
+}
+export const ProductView: React.FC<Props> = ({
+  handleIncrease,
+  handleDecrease,
+  quantity,
+}) => {
   return (
     <Box>
       <Header></Header>
@@ -17,10 +26,15 @@ export const ProductView: React.FC = () => {
         title={"Energy saving light bulb"}
         subTitle={"25W // Packet of 4"}
       />
-      <AddToCart price={'12.99'}/>
-      <Description description={mockData.description}/>
-      <Specifications specifications={mockSpecifications.specifications}/>
-      <Footer/>
+      <AddToCart
+        price={"12.99"}
+        quantity={quantity}
+        handleDecrease={handleDecrease}
+        handleIncrease={handleIncrease}
+      />
+      <Description description={mockData.description} />
+      <Specifications specifications={mockSpecifications.specifications} />
+      <Footer />
     </Box>
   );
 };

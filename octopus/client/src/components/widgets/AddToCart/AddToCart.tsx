@@ -4,8 +4,16 @@ import { QuantityActions } from "../QuantityActions";
 
 interface Props {
   price: string;
+  quantity: number;
+  handleIncrease: () => void;
+  handleDecrease: () => void;
 }
-export const AddToCart: React.FC<Props> = ({ price }) => {
+export const AddToCart: React.FC<Props> = ({
+  handleIncrease,
+  handleDecrease,
+  price,
+  quantity,
+}) => {
   return (
     <Box
       sx={{
@@ -38,7 +46,7 @@ export const AddToCart: React.FC<Props> = ({ price }) => {
           {price}
         </Typography>
         <div data-testid="quantity-actions">
-          <QuantityActions />
+          <QuantityActions quantity={quantity} handleIncrease={handleIncrease} handleDecrease={handleDecrease} />
         </div>
       </Box>
       <Button
