@@ -15,7 +15,7 @@ export const QuantityActions: React.FC<Props> = ({
   handleDecrease,
 }) => {
   return (
-    <Box>
+    <Box data-testid="quantity-actions">
       <Typography sx={{ textAlign: "center", color: "#345689" }}>
         QTY
       </Typography>

@@ -1,16 +1,20 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
+import { ProductItem } from "../../../containers/ProductContainer";
+import { mockProductItem } from "./AddToCart.mockData";
 
 interface Props {
   price: string;
   quantity: number;
   handleIncrease: () => void;
   handleDecrease: () => void;
+  handleAddToCart: (productItem: ProductItem) => void;
 }
 export const AddToCart: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
+  handleAddToCart,
   price,
   quantity,
 }) => {
@@ -45,11 +49,14 @@ export const AddToCart: React.FC<Props> = ({
         >
           {price}
         </Typography>
-        <div data-testid="quantity-actions">
-          <QuantityActions quantity={quantity} handleIncrease={handleIncrease} handleDecrease={handleDecrease} />
-        </div>
+        <QuantityActions
+          quantity={quantity}
+          handleIncrease={handleIncrease}
+          handleDecrease={handleDecrease}
+        />
       </Box>
       <Button
+        onClick={() => handleAddToCart(mockProductItem)}
         aria-label="add-to-cart"
         size="large"
         sx={{

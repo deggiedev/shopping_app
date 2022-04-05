@@ -8,20 +8,25 @@ import { Description } from "../components/widgets/Description";
 import { Footer } from "../components/widgets/Footer/Footer";
 import { Specifications } from "../components/widgets/Specifications/Specifications";
 import { mockSpecifications } from "../components/widgets/Specifications/Specifications.mockData";
+import { CartItems, ProductItem } from "../containers/ProductContainer";
 
 interface Props {
   quantity: number;
+  cartItems: CartItems;
   handleIncrease: () => void;
   handleDecrease: () => void;
+  handleAddToCart: (productItem: ProductItem) => void
 }
 export const ProductView: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
+  handleAddToCart,
   quantity,
+  cartItems,
 }) => {
   return (
     <Box>
-      <Header></Header>
+      <Header cartItems={cartItems}></Header>
       <ProductTitle
         title={"Energy saving light bulb"}
         subTitle={"25W // Packet of 4"}
@@ -31,6 +36,7 @@ export const ProductView: React.FC<Props> = ({
         quantity={quantity}
         handleDecrease={handleDecrease}
         handleIncrease={handleIncrease}
+        handleAddToCart={handleAddToCart}
       />
       <Description description={mockData.description} />
       <Specifications specifications={mockSpecifications.specifications} />
