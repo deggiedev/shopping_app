@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, SvgIcon } from "@mui/material";
 import { BasketIcon, OctopusLogo } from "../../../assets";
+import { ProductImage } from "../ProductImage/ProductImage";
+import { mockImage } from "../ProductImage/ProductImage.mockData";
 
 export const Header: React.FC = () => {
   return (
-    <Box sx={{ display: "flex", width: "100%", height: '300px', background: "#050f2a" }}>
+    <Box sx={{ position: 'relative', display: "flex", width: "100%", height: '300px', background: "#050f2a" }}>
       <SvgIcon
         sx={{ marginY: 1, width: 200, color: "white" }}
         viewBox="0 0 470.6667 64"
@@ -14,6 +16,7 @@ export const Header: React.FC = () => {
       <SvgIcon sx={{ marginY: 1, marginX: 2, marginLeft: 'auto', color: "white" }}>
         <BasketIcon />
       </SvgIcon>
+      <ProductImage image={mockImage}/>
     </Box>
   );
 };

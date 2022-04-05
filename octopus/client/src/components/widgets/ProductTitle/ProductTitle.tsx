@@ -18,7 +18,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
         flexDirection: "column",
         alingContent: "center",
         justifyContent: "center",
-        paddingTop: 4,
+        paddingTop: 5,
         paddingBottom: 2,
         paddingX: 1.5,
         background: `#01193b`,
