@@ -7,12 +7,12 @@ describe('ProductImage', () => {
   it('should render Header component with octopus logo and basket icon', async () => {
     // Arrange
     const expectedUrl = mockImage.src
-    render(<ProductImage image={mockImage}></ProductImage>);
+    render(<ProductImage imageUrl={mockImage.src}></ProductImage>);
 
     // Act
 
     // Assert
-    const image = screen.getByAltText('product image')
+    const image = screen.getByAltText('product-image')
     expect(image).toHaveAttribute('src', expectedUrl)
   });
 });

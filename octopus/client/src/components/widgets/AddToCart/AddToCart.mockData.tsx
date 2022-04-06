@@ -1,5 +1,5 @@
 export const mockData = {
-  price: "12.99",
+  price: 1299,
 };
 
 export const mockProductItem = {

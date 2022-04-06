@@ -15,7 +15,7 @@ export const ProductImage: React.FC<Props> = ({ imageUrl }) => {
         marginBottom: -8,
       }}
     >
-      <CardMedia component="img" src={imageUrl as string}></CardMedia>
+      <CardMedia component="img" src={imageUrl as string} alt={'product-image'}></CardMedia>
     </Box>
   );
 };

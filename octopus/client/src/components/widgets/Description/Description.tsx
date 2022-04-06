@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 interface Props {
-  description: string;
+  description: string | null | undefined;
 }
 export const Description: React.FC<Props> = ({ description }) => {
   return (

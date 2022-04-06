@@ -5,20 +5,19 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 
-type Specifications = {
-  brand: string;
-  weight: string;
-  dimensions: string;
-  modelNumber: string;
-  colour: string;
-};
+type Specification = {
+  brand: string | undefined;
+  weight: number | undefined;
+  dimensions: string | undefined;
+  modelNumber: string | undefined;
+  colour: string | undefined;
+} | null;
 
 interface Props {
-  specifications: Specifications;
+  specification: Specification | null;
 }
 
-export const Specifications: React.FC<Props> = ({ specifications }) => {
-  const { brand, weight, dimensions, modelNumber, colour } = specifications;
+export const Specifications: React.FC<Props> = ({ specification }) => {
 
   return (
     <Box sx={{ background: "#050f2a", padding: 2 }}>
@@ -66,7 +65,7 @@ export const Specifications: React.FC<Props> = ({ specifications }) => {
                   padding: 0,
                 }}
               >
-                {brand}
+                {specification?.brand}
               </TableCell>
             </TableRow>
             <TableRow>
@@ -88,7 +87,7 @@ export const Specifications: React.FC<Props> = ({ specifications }) => {
                   padding: 0,
                 }}
               >
-                {weight}
+                {specification?.weight}
               </TableCell>
             </TableRow>
             <TableRow>
@@ -110,7 +109,7 @@ export const Specifications: React.FC<Props> = ({ specifications }) => {
                   padding: 0,
                 }}
               >
-                {dimensions}
+                {specification?.dimensions}
               </TableCell>
             </TableRow>
             <TableRow>
@@ -132,7 +131,7 @@ export const Specifications: React.FC<Props> = ({ specifications }) => {
                   padding: 0,
                 }}
               >
-                {modelNumber}
+                {specification?.modelNumber}
               </TableCell>
             </TableRow>
             <TableRow>
@@ -154,7 +153,7 @@ export const Specifications: React.FC<Props> = ({ specifications }) => {
                   padding: 0,
                 }}
               >
-                {colour}
+                {specification?.colour}
               </TableCell>
             </TableRow>
           </TableBody>

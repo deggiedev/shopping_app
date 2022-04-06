@@ -3,12 +3,11 @@ import { Box } from "@mui/material";
 import { Header } from "../components/widgets/Header";
 import { ProductTitle } from "../components/widgets/ProductTitle";
 import { AddToCart } from "../components/widgets/AddToCart/AddToCart";
-import { mockData } from "../components/widgets/Description/Description.mockData";
 import { Description } from "../components/widgets/Description";
 import { Footer } from "../components/widgets/Footer/Footer";
 import { Specifications } from "../components/widgets/Specifications/Specifications";
-import { mockSpecifications } from "../components/widgets/Specifications/Specifications.mockData";
 import { CartItems, CartItem, Product } from "../containers/ProductContainer";
+import { createSpecification } from "../utils/createSpecification";
 
 interface Props {
   product: Product;
@@ -40,8 +39,8 @@ export const ProductView: React.FC<Props> = ({
         handleIncrease={handleIncrease}
         handleAddToCart={handleAddToCart}
       />
-      <Description description={mockData.description} />
-      <Specifications specifications={mockSpecifications.specifications} />
+      <Description description={product?.description} />
+      <Specifications specification={createSpecification(product)} />
       <Footer />
     </Box>
   );

@@ -1,30 +1,39 @@
 import React from "react";
 import { MockedProvider } from "@apollo/react-testing";
-import { screen, render } from "@testing-library/react";
+import { screen, render, wait } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
-import { gql } from "@apollo/client";
+import { GET_PRODUCT } from "../src/graphql/queries";
 
-export const GET_PRODUCT = gql`
+const mocks = [
   {
-    product(productId: 1) {
-      id
-      name
-      power
-      description
-      price
-      quantity
-      brand
-      weight
-      height
-      width
-      length
-      modelCode
-      colour
-      imgUrl
-    }
-  }
-`;
+    request: {
+      query: GET_PRODUCT,
+      variables: {
+        id: 1,
+      },
+    },
+    result: {
+      data: {
+        product: {
+          name: "bulb",
+          power: "25W",
+          description: "desc",
+          price: 1299,
+          quantity: 4,
+          brand: "Philips",
+          weight: 20,
+          height: 20,
+          width: 20,
+          length: 20,
+          modelCode: "E2",
+          colour: "white",
+          imgUrl: "testurl",
+        },
+      },
+    },
+  },
+];
 describe("App", () => {
   test("should be able to increase product quantity", async () => {
     // Arrange
@@ -65,6 +74,8 @@ describe("App", () => {
       </MockedProvider>
     );
 
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
     // Act
 
     // Assert
@@ -76,14 +87,20 @@ describe("App", () => {
 
   test("should be able to decrease product quantity", async () => {
     // Arrange
-    render(<App />);
+    render(
+      <MockedProvider mocks={mocks}>
+        <App />
+      </MockedProvider>
+    );
+
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     // Act
 
     // Assert
-    const plusButton = screen.getByRole("button", { name: "plus-button" });
+    const plusButton = screen.getByLabelText("plus-button");
     userEvent.click(plusButton);
-    const minusButton = screen.getByRole("button", { name: "minus-button" });
+    const minusButton = screen.getByLabelText("minus-button");
     userEvent.click(minusButton);
     const quantity = screen.getByTestId("quantity");
     expect(quantity).toHaveTextContent(1);
@@ -91,7 +108,13 @@ describe("App", () => {
 
   test("should be able to add items to the basket", async () => {
     // Arrange
-    render(<App />);
+    render(
+      <MockedProvider mocks={mocks}>
+        <App />
+      </MockedProvider>
+    );
+
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     // Act
     const addToCartButton = screen.getByRole("button", { name: "add-to-cart" });

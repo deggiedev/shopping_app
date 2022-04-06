@@ -7,7 +7,7 @@ describe("Specifications", () => {
 
     it("should render <Specifications /> component with the correct title", async () => {
         // Arrange
-        render(<Specifications specifications={mockSpecifications.specifications}></Specifications>);
+        render(<Specifications specification={mockSpecifications.specifications}></Specifications>);
     
         // Act
     
@@ -18,7 +18,7 @@ describe("Specifications", () => {
   it("should render <Specifications /> component with the correct data for a product specification", async () => {
     // Arrange
 
-    render(<Specifications specifications={mockSpecifications.specifications}></Specifications>);
+    render(<Specifications specification={mockSpecifications.specifications}></Specifications>);
 
     // Act
 
