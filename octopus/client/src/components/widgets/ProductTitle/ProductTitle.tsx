@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 interface Props {
-  title: string;
-  subTitle?: string;
+  title: string | null | undefined;
+  subTitle?: string | null | undefined;
 }
 export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
   

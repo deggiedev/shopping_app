@@ -1,35 +1,21 @@
 import React from "react";
 import { Box, CardMedia } from "@mui/material";
 
-type Image = {
-  src: string;
-  alt: string;
-};
-
 interface Props {
-  image: Image;
+  imageUrl: string | null | undefined;
 }
+export const ProductImage: React.FC<Props> = ({ imageUrl }) => {
 
-export const ProductImage: React.FC<Props> = ({ image }) => {
   return (
     <Box
       sx={{
-        position: "absolute",
-        marginLeft: "auto",
-        marginRight: "auto",
-        left: 50,
-        right: 50,
-        top: 50,
-        bottom: -30,
-        textAlign: "center",
-        background: "white",
+        paddingX: 5,
+        paddingBottom: 5,
+        background: "#050f2a",
+        marginBottom: -8,
       }}
     >
-      <CardMedia
-        component="img"
-        src={image.src}
-        alt={image.alt}
-      ></CardMedia>
+      <CardMedia component="img" src={imageUrl as string}></CardMedia>
     </Box>
   );
 };

@@ -2,13 +2,13 @@ import React from "react";
 import { Badge, Box, SvgIcon } from "@mui/material";
 import { BasketIcon, OctopusLogo } from "../../../assets";
 import { ProductImage } from "../ProductImage/ProductImage";
-import { mockImage } from "../ProductImage/ProductImage.mockData";
 import { CartItems } from "../../../containers/ProductContainer";
 
 interface Props {
   cartItems: CartItems;
+  imageUrl: string | null | undefined;
 }
-export const Header: React.FC<Props> = ({ cartItems }) => {
+export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
   const has = {
     cartItems: !!cartItems,
   };
@@ -16,13 +16,13 @@ export const Header: React.FC<Props> = ({ cartItems }) => {
   const totalCartItems = has.cartItems ? cartItems?.length : null;
 
   return (
+    <Box>
     <Box
       sx={{
         paddingTop: 1,
         position: "relative",
         display: "flex",
         width: "100%",
-        height: "300px",
         background: "#050f2a",
       }}
     >
@@ -41,7 +41,8 @@ export const Header: React.FC<Props> = ({ cartItems }) => {
           <BasketIcon />
         </SvgIcon>
       </Badge>
-      <ProductImage image={mockImage} />
+    </Box>
+    <ProductImage imageUrl={imageUrl} />
     </Box>
   );
 };

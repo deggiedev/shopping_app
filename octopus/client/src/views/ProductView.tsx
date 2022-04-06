@@ -8,31 +8,33 @@ import { Description } from "../components/widgets/Description";
 import { Footer } from "../components/widgets/Footer/Footer";
 import { Specifications } from "../components/widgets/Specifications/Specifications";
 import { mockSpecifications } from "../components/widgets/Specifications/Specifications.mockData";
-import { CartItems, ProductItem } from "../containers/ProductContainer";
+import { CartItems, CartItem, Product } from "../containers/ProductContainer";
 
 interface Props {
+  product: Product;
   quantity: number;
   cartItems: CartItems;
   handleIncrease: () => void;
   handleDecrease: () => void;
-  handleAddToCart: (productItem: ProductItem) => void
+  handleAddToCart: (cartItem: CartItem) => void
 }
 export const ProductView: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
   handleAddToCart,
+  product,
   quantity,
   cartItems,
 }) => {
   return (
     <Box>
-      <Header cartItems={cartItems}></Header>
+      <Header cartItems={cartItems} imageUrl={product?.imgUrl}></Header>
       <ProductTitle
-        title={"Energy saving light bulb"}
-        subTitle={"25W // Packet of 4"}
+        title={product?.name}
+        subTitle={`${product?.power} // Packet of 4`}
       />
       <AddToCart
-        price={"12.99"}
+        price={product?.price}
         quantity={quantity}
         handleDecrease={handleDecrease}
         handleIncrease={handleIncrease}

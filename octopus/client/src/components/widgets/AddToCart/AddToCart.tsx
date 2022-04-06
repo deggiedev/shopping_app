@@ -1,15 +1,16 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
-import { ProductItem } from "../../../containers/ProductContainer";
+import { CartItem } from "../../../containers/ProductContainer";
 import { mockProductItem } from "./AddToCart.mockData";
+import { formatPrice } from "../../../utils/formatPrice";
 
 interface Props {
-  price: string;
+  price: number | null | undefined;
   quantity: number;
   handleIncrease: () => void;
   handleDecrease: () => void;
-  handleAddToCart: (productItem: ProductItem) => void;
+  handleAddToCart: (cartItem: CartItem) => void;
 }
 export const AddToCart: React.FC<Props> = ({
   handleIncrease,
@@ -45,9 +46,10 @@ export const AddToCart: React.FC<Props> = ({
             fontFamily: "Gotham",
             fontWeight: 900,
             color: "white",
+            marginTop: 2.5,
           }}
         >
-          {price}
+          {formatPrice(price as number)}
         </Typography>
         <QuantityActions
           quantity={quantity}
