@@ -2,7 +2,7 @@ import React from "react";
 import { Box, CardMedia } from "@mui/material";
 
 interface Props {
-  imageUrl: string | null | undefined;
+  imageUrl: string;
 }
 export const ProductImage: React.FC<Props> = ({ imageUrl }) => {
 
@@ -15,7 +15,7 @@ export const ProductImage: React.FC<Props> = ({ imageUrl }) => {
         marginBottom: -8,
       }}
     >
-      <CardMedia component="img" src={imageUrl as string} alt={'product-image'}></CardMedia>
+      <CardMedia component="img" src={imageUrl || ""} alt={'product-image'}></CardMedia>
     </Box>
   );
 };

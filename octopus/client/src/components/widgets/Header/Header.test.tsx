@@ -8,7 +8,7 @@ describe("Header", () => {
     // Arrange
 
     render(
-      <Header cartItems={mockCartItems}></Header>
+      <Header cartItems={mockCartItems} imageUrl={""}></Header>
     );
 
     // Act

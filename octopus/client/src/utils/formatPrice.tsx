@@ -1,3 +1,3 @@
-export const formatPrice= (price: number) => {
-    return price / 100;
+export const formatPrice = (price: number) => {
+  return price / 100;
 };

@@ -4,17 +4,10 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
-
-type Specification = {
-  brand: string | undefined;
-  weight: number | undefined;
-  dimensions: string | undefined;
-  modelNumber: string | undefined;
-  colour: string | undefined;
-} | null;
+import { Specification } from "../../../types";
 
 interface Props {
-  specification: Specification | null;
+  specification: Specification;
 }
 
 export const Specifications: React.FC<Props> = ({ specification }) => {

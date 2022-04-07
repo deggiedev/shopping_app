@@ -3,48 +3,35 @@ import { ProductView } from "../views";
 import { useLazyQuery } from "@apollo/client";
 import { Box, CircularProgress } from "@mui/material";
 import { GET_PRODUCT } from "../graphql/queries";
-
-export type Product = {
-  id: string;
-  name: string;
-  power: string;
-  description: string;
-  price: number;
-  quantity: number;
-  brand: string;
-  weight: number;
-  height: number;
-  width: number;
-  length: number;
-  modelCode: string;
-  colour: string;
-  imgUrl: string;
-} | null;
-
-export type CartItems = Array<CartItem>;
-
-export type CartItem = {
-  name: string;
-  price: number;
-  quantity: number;
-} | null;
+import { Product, CartItems, CartItem, Specification } from "../types";
+import { createCartItem } from "../utils/createCartItem";
+import { createSpecification } from "../utils";
 
 export const ProductContainer: React.FC = () => {
-  const [product, setProduct] = useState(null);
+  //state and hooks
+  const [product, setProduct] = useState<Product>(null);
   const [quantity, setQuantity] = useState<number>(1);
   const [cartItems, setCartItems] = useState<CartItems>([]);
+  const [specification, setSpecification] = useState<Specification>(null);
+
+  // queries
   const [loadProduct, { loading }] = useLazyQuery(GET_PRODUCT, {
+    variables: { productId: 1 },
     onCompleted: (data) => {
       if (!data) {
         return;
       }
       if (data) {
         setProduct(data.product);
+        const specification = createSpecification(data.product);
+        setSpecification(specification);
       }
     },
   });
 
+  // handlers
   const handleIncrease = () => {
+    console.log("clicked");
     setQuantity(quantity + 1);
   };
 
@@ -54,12 +41,12 @@ export const ProductContainer: React.FC = () => {
     }
   };
 
-  const handleAddToCart = (cartItem: CartItem) => {
-    if (quantity > 0) {
-      setCartItems([...cartItems, cartItem]);
-    }
+  const handleAddToCart = async (product: Product, quantity: number) => {
+    const cartItem = (await createCartItem(product, quantity));
+    setCartItems([...(cartItems as CartItems), cartItem as CartItem]);
   };
 
+  // effects
   useEffect(() => {
     loadProduct();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -82,6 +69,7 @@ export const ProductContainer: React.FC = () => {
       {!loading && (
         <ProductView
           product={product}
+          specification={specification}
           cartItems={cartItems}
           quantity={quantity}
           handleIncrease={handleIncrease}

@@ -1,46 +1,48 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Header } from "../components/widgets/Header";
-import { ProductTitle } from "../components/widgets/ProductTitle";
-import { AddToCart } from "../components/widgets/AddToCart/AddToCart";
-import { Description } from "../components/widgets/Description";
-import { Footer } from "../components/widgets/Footer/Footer";
-import { Specifications } from "../components/widgets/Specifications/Specifications";
-import { CartItems, CartItem, Product } from "../containers/ProductContainer";
-import { createSpecification } from "../utils/createSpecification";
+import {
+  Header,
+  ProductTitle,
+  AddToCart,
+  Description,
+  Footer,
+  Specifications,
+} from "../components/widgets";
+import { CartItems, Product, Specification } from "../types";
 
 interface Props {
   product: Product;
+  specification: Specification;
   quantity: number;
   cartItems: CartItems;
   handleIncrease: () => void;
   handleDecrease: () => void;
-  handleAddToCart: (cartItem: CartItem) => void
+  handleAddToCart: (product: Product, quantity: number) => void;
 }
 export const ProductView: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
   handleAddToCart,
   product,
+  specification,
   quantity,
   cartItems,
 }) => {
+  const subTitle = `${product?.power} // Packet of ${product?.quantity}`;
+
   return (
     <Box>
-      <Header cartItems={cartItems} imageUrl={product?.imgUrl}></Header>
-      <ProductTitle
-        title={product?.name}
-        subTitle={`${product?.power} // Packet of 4`}
-      />
+      <Header cartItems={cartItems} imageUrl={product?.imgUrl || ""}></Header>
+      <ProductTitle title={product?.name || null} subTitle={subTitle || null} />
       <AddToCart
-        price={product?.price}
+        product={product}
         quantity={quantity}
         handleDecrease={handleDecrease}
         handleIncrease={handleIncrease}
         handleAddToCart={handleAddToCart}
       />
-      <Description description={product?.description} />
-      <Specifications specification={createSpecification(product)} />
+      <Description description={product?.description || null} />
+      <Specifications specification={specification} />
       <Footer />
     </Box>
   );

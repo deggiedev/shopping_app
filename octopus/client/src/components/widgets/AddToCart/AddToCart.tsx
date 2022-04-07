@@ -1,24 +1,27 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
-import { CartItem } from "../../../containers/ProductContainer";
-import { mockProductItem } from "./AddToCart.mockData";
-import { formatPrice } from "../../../utils/formatPrice";
+import { Product } from "../../../types";
+import { formatPrice } from "../../../utils";
 
 interface Props {
-  price: number | null | undefined;
+  product: Product;
   quantity: number;
   handleIncrease: () => void;
   handleDecrease: () => void;
-  handleAddToCart: (cartItem: CartItem) => void;
+  handleAddToCart: (product: Product, quantity: number) => void;
 }
 export const AddToCart: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
   handleAddToCart,
-  price,
+  product,
   quantity,
 }) => {
+  const has = {
+    price: !!product?.price,
+  };
+  const price = has.price && formatPrice(product!.price);
   return (
     <Box
       sx={{
@@ -49,7 +52,7 @@ export const AddToCart: React.FC<Props> = ({
             marginTop: 2.5,
           }}
         >
-          {formatPrice(price as number)}
+          {price}
         </Typography>
         <QuantityActions
           quantity={quantity}
@@ -58,7 +61,7 @@ export const AddToCart: React.FC<Props> = ({
         />
       </Box>
       <Button
-        onClick={() => handleAddToCart(mockProductItem)}
+        onClick={() => handleAddToCart(product, quantity)}
         aria-label="add-to-cart"
         size="large"
         sx={{
