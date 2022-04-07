@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
 import { Product } from "../../../types";
 import { formatPrice } from "../../../utils";
+import { Price } from "../Price";
 
 interface Props {
   product: Product;
@@ -18,10 +19,7 @@ export const AddToCart: React.FC<Props> = ({
   product,
   quantity,
 }) => {
-  const has = {
-    price: !!product?.price,
-  };
-  const price = has.price && formatPrice(product!.price);
+  const price = formatPrice(product?.price!);
   return (
     <Box
       sx={{
@@ -42,18 +40,7 @@ export const AddToCart: React.FC<Props> = ({
           alignItems: "center",
         }}
       >
-        <Typography
-          sx={{
-            lineHeight: "1.25",
-            fontSize: "30px",
-            fontFamily: "Gotham",
-            fontWeight: 900,
-            color: "white",
-            marginTop: 2.5,
-          }}
-        >
-          {price}
-        </Typography>
+        <Price price={price} />
         <QuantityActions
           quantity={quantity}
           handleIncrease={handleIncrease}

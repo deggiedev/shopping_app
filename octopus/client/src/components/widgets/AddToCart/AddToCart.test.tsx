@@ -4,26 +4,6 @@ import { AddToCart } from "./AddToCart";
 import { mockProduct } from "../../mockData";
 
 describe("Add To Cart", () => {
-  it("should render <AddToCart /> component with correct price", async () => {
-    // Arrange
-    const expectedPrice = "12.99";
-
-    render(
-      <AddToCart
-        quantity={1}
-        handleIncrease={() => null}
-        handleDecrease={() => null}
-        handleAddToCart={() => null}
-        product={mockProduct}
-      ></AddToCart>
-    );
-
-    // Act
-
-    // Assert
-    const price = screen.getByText(12.99);
-    expect(price).toHaveTextContent(expectedPrice);
-  });
 
   it("should render <AddToCart /> component with a button showing the correct text", async () => {
     // Arrange

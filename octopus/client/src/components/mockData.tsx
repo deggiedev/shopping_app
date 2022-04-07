@@ -40,3 +40,8 @@ export const mockSpecifications = {
   modelNumber: "E27 ES",
   colour: "cool daylight",
 };
+
+export const mockPrice = {
+  pounds: '12',
+  pence: '99',
+}
