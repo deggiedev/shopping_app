@@ -1,26 +1,24 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import { ProductTitle } from "./ProductTitle";
-import { mockData } from "./ProductTitle.mockData";
+import { mockProduct, mockSubTitle } from "../../mockData";
 
 describe("Product Title", () => {
   it("should render ProductTitle component with a title and subTitle", async () => {
     // Arrange
-    // const expectedTitle = mockData.title;
-    // const expectedSubTitle = mockData.subTitle;
-
+    
     render(
       <ProductTitle
-        title={mockData.title}
-        subTitle={mockData.subTitle}
+        title={mockProduct.name}
+        subTitle={mockSubTitle}
       ></ProductTitle>
-    ); 
-    
+    );
+
     // Act
 
     // Assert
-    const title = screen.getByText(mockData.title);
-    const subTitle = screen.getByText(mockData.subTitle);
+    const title = screen.getByText(mockProduct.name);
+    const subTitle = screen.getByText(mockSubTitle);
     expect(title).toBeInTheDocument();
     expect(subTitle).toBeInTheDocument();
   });

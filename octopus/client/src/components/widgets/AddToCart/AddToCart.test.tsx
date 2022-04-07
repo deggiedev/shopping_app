@@ -1,7 +1,7 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import { AddToCart } from "./AddToCart";
-import { mockData } from "./AddToCart.mockData";
+import { mockProduct } from "../../mockData";
 
 describe("Add To Cart", () => {
   it("should render <AddToCart /> component with correct price", async () => {
@@ -14,7 +14,7 @@ describe("Add To Cart", () => {
         handleIncrease={() => null}
         handleDecrease={() => null}
         handleAddToCart={() => null}
-        price={mockData.price}
+        product={mockProduct}
       ></AddToCart>
     );
 
@@ -34,7 +34,7 @@ describe("Add To Cart", () => {
         handleIncrease={() => null}
         handleDecrease={() => null}
         handleAddToCart={() => null}
-        price={mockData.price}
+        product={mockProduct}
       ></AddToCart>
     );
 
@@ -55,7 +55,7 @@ describe("Add To Cart", () => {
         handleIncrease={() => null}
         handleDecrease={() => null}
         handleAddToCart={() => null}
-        price={mockData.price}
+        product={mockProduct}
       ></AddToCart>
     );
 

@@ -38,36 +38,6 @@ describe("App", () => {
   test("should be able to increase product quantity", async () => {
     // Arrange
 
-    const mocks = [
-      {
-        request: {
-          query: GET_PRODUCT,
-          variables: {
-            id: 1,
-          },
-        },
-        result: {
-          data: {
-            product: {
-              name: "bulb",
-              power: "25W",
-              description: "desc",
-              price: 1299,
-              quantity: 4,
-              brand: "Philips",
-              weight: 20,
-              height: 20,
-              width: 20,
-              length: 20,
-              modelCode: "E2",
-              colour: "white",
-              imgUrl: "testurl",
-            },
-          },
-        },
-      },
-    ];
-
     render(
       <MockedProvider mocks={mocks}>
         <App />
@@ -118,9 +88,8 @@ describe("App", () => {
 
     // Act
     const addToCartButton = screen.getByRole("button", { name: "add-to-cart" });
-    userEvent.click(addToCartButton);
-    userEvent.click(addToCartButton);
+    await userEvent.click(addToCartButton);
     const badge = screen.getByTestId("badge");
-    expect(badge).toHaveTextContent(2);
+    expect(badge).toHaveTextContent(1);
   });
 });

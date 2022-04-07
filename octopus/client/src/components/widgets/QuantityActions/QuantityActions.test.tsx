@@ -1,12 +1,13 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import { QuantityActions } from "./QuantityActions";
+import { mockProduct } from "../../mockData";
 
 describe("QuantityActions", () => {
   it("should render <QuantityActions/> component with two buttons showing the correct plus and minus symbols", async () => {
     // Arrange
 
-    render(<QuantityActions></QuantityActions>);
+    render(<QuantityActions quantity={mockProduct.quantity} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
 
     // Act
 
@@ -20,7 +21,7 @@ describe("QuantityActions", () => {
   it("should render <QuantityActions/> component with the correct label", async () => {
     // Arrange
     const expectedText = 'QTY'
-    render(<QuantityActions></QuantityActions>);
+    render(<QuantityActions quantity={mockProduct.quantity} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
 
     // Act
 
