@@ -21,7 +21,6 @@ export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
       <Box
         sx={{
           paddingTop: 1,
-          position: "relative",
           display: "flex",
           width: "100%",
           background: palette.background.darkBlue,
@@ -44,7 +43,9 @@ export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
           </SvgIcon>
         </Badge>
       </Box>
-      <ProductImage imageUrl={imageUrl || ""} />
+      <Box display="flex" justifyContent="center" sx={{background: palette.background.darkBlue}}>
+      <ProductImage imageUrl={imageUrl} />
+      </Box>
     </Box>
   );
 };

@@ -1,6 +1,12 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 export const Layout: React.FC = ({ children }) => {
-  return <Container disableGutters>{children}</Container>;
+  return (
+    <Box sx={{ background: "#050f2a" }}>
+      <Container maxWidth="lg" disableGutters>
+        {children}
+      </Container>
+    </Box>
+  );
 };

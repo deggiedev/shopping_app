@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const CustomButton: React.FC<Props> = ({ handleClick }) => {
-  const { palette } = theme;
+  const { palette, breakpoints } = theme;
   return (
     <Box
       aria-label="add-to-cart"
@@ -16,7 +16,15 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      sx={{ position: "relative", marginX: 4, marginTop: 2 }}
+      sx={{
+        position: "relative",
+        marginX: 4,
+        marginTop: 2,
+        [theme.breakpoints.up("lg")]: {
+          marginLeft: "auto",
+          minWidth: 200,
+        },
+      }}
     >
       <Box
         sx={{
