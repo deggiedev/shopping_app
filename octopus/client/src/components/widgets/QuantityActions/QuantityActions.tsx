@@ -30,8 +30,8 @@ export const QuantityActions: React.FC<Props> = ({
           variant="contained"
           sx={{
             textTransform: "none",
-            background: "#1a2a43",
-            "&:hover": { background: "#1a2a43" },
+            background: palette.background.middleBlue,
+            "&:hover": { background: palette.background.middleBlue},
             color: palette.text.white,
             marginRight: 1,
             minWidth: 0,
@@ -62,8 +62,8 @@ export const QuantityActions: React.FC<Props> = ({
           variant="contained"
           sx={{
             textTransform: "none",
-            background: "#36598d",
-            "&:hover": { background: "#36598d" },
+            background: palette.background.lightBlue,
+            "&:hover": { background: palette.background.lightBlue },
             color: palette.text.white,
             marginLeft: 1,
             minWidth: 0,
