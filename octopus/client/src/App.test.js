@@ -87,7 +87,7 @@ describe("App", () => {
     await new Promise((resolve) => setTimeout(resolve, 0));
 
     // Act
-    const addToCartButton = screen.getByRole("button", { name: "add-to-cart" });
+    const addToCartButton = screen.getByText('Add to cart');
     await userEvent.click(addToCartButton);
     const badge = screen.getByTestId("badge");
     expect(badge).toHaveTextContent(1);

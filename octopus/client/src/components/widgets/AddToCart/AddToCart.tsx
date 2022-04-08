@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
 import { Product } from "../../../types";
 import { formatPrice } from "../../../utils";
 import { Price } from "../Price";
+import { Button } from "../../surfaces/Button";
 
 interface Props {
   product: Product;
@@ -20,6 +21,10 @@ export const AddToCart: React.FC<Props> = ({
   quantity,
 }) => {
   const price = formatPrice(product?.price!);
+
+  const handleClick = () => {
+    handleAddToCart(product, quantity);
+  }
   return (
     <Box
       sx={{
@@ -47,26 +52,7 @@ export const AddToCart: React.FC<Props> = ({
           handleDecrease={handleDecrease}
         />
       </Box>
-      <Button
-        onClick={() => handleAddToCart(product, quantity)}
-        aria-label="add-to-cart"
-        size="large"
-        sx={{
-          textTransform: "none",
-          background: "#fb1a7b",
-          "&:hover": { background: "#fb1a7b" },
-          marginX: 2.5,
-          marginTop: 2,
-          lineHeight: "1.25",
-          fontSize: "24px",
-          fontFamily: "Gotham",
-          fontWeight: 900,
-          color: "white",
-        }}
-        variant="contained"
-      >
-        Add to cart
-      </Button>
+      <Button handleClick={handleClick}/>
     </Box>
   );
 };

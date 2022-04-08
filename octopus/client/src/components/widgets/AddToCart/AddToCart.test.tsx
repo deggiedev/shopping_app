@@ -7,7 +7,7 @@ describe("Add To Cart", () => {
 
   it("should render <AddToCart /> component with a button showing the correct text", async () => {
     // Arrange
-
+    const expectedText = "Add to cart"
     render(
       <AddToCart
         quantity={1}
@@ -22,8 +22,8 @@ describe("Add To Cart", () => {
 
     // Assert
     expect(
-      screen.getByRole("button", { name: 'add-to-cart'})
-    ).toBeInTheDocument();
+      screen.getByText('Add to cart')
+    ).toHaveTextContent(expectedText);
   });
 
   it("should render <AddToCart /> component with a <QuantityActions /> child component", async () => {
