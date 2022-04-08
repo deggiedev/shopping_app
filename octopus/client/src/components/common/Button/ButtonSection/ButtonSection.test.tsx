@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { ButtonSection } from "./ButtonSection";
 
 describe("ButtonSection", () => {
-  it("should render <AddToCart /> component with a button showing the correct text", async () => {
+  it("should render <ButtonSection /> component", async () => {
     // Arrange
     render(<ButtonSection variant={'top'}></ButtonSection>);
 

@@ -49,7 +49,7 @@ describe("App", () => {
     // Act
 
     // Assert
-    const plusButton = screen.getByRole("button", { name: "plus-button" });
+    const plusButton = screen.getByLabelText("add");
     userEvent.click(plusButton);
     const quantity = screen.getByTestId("quantity");
     expect(quantity).toHaveTextContent(2);
@@ -68,9 +68,9 @@ describe("App", () => {
     // Act
 
     // Assert
-    const plusButton = screen.getByLabelText("plus-button");
+    const plusButton = screen.getByLabelText("add");
     userEvent.click(plusButton);
-    const minusButton = screen.getByLabelText("minus-button");
+    const minusButton = screen.getByLabelText("minus");
     userEvent.click(minusButton);
     const quantity = screen.getByTestId("quantity");
     expect(quantity).toHaveTextContent(1);

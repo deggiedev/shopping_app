@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardMedia } from "@mui/material";
+import { Box, CardMedia } from "@mui/material";
 import { theme } from "../../../theme";
 
 interface Props {

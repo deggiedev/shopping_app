@@ -4,7 +4,7 @@ import { QuantityActions } from "../QuantityActions";
 import { Product } from "../../../types";
 import { formatPrice } from "../../../utils";
 import { Price } from "../Price";
-import { Button } from "../../surfaces/Button";
+import { Button } from "../../common/Button";
 import { theme } from "../../../theme";
 
 interface Props {

@@ -32,8 +32,9 @@ export const ProductContainer: React.FC = () => {
 
   // handlers
   const handleIncrease = () => {
-    console.log("clicked");
-    setQuantity(quantity + 1);
+    if (quantity < 9) {
+      setQuantity(quantity + 1);
+    }
   };
 
   const handleDecrease = () => {

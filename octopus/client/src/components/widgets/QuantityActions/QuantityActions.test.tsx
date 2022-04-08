@@ -7,13 +7,13 @@ describe("QuantityActions", () => {
   it("should render <QuantityActions/> component with two buttons showing the correct plus and minus symbols", async () => {
     // Arrange
 
-    render(<QuantityActions quantity={mockProduct.quantity} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
+    render(<QuantityActions quantity={1} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
 
     // Act
 
     // Assert
-    const plusButton = screen.getByRole("button", { name: "plus-button" });
-    const minusButton = screen.getByRole("button", { name: "minus-button" });
+    const plusButton = screen.getByRole("button", { name: "add" });
+    const minusButton = screen.getByRole("button", { name: "minus" });
     expect(plusButton).toBeInTheDocument();
     expect(minusButton).toBeInTheDocument();
   });
@@ -21,7 +21,7 @@ describe("QuantityActions", () => {
   it("should render <QuantityActions/> component with the correct label", async () => {
     // Arrange
     const expectedText = 'QTY'
-    render(<QuantityActions quantity={mockProduct.quantity} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
+    render(<QuantityActions quantity={1} handleIncrease={jest.fn} handleDecrease={jest.fn}></QuantityActions>);
 
     // Act
 

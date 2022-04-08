@@ -3,8 +3,8 @@ import { screen, render } from "@testing-library/react";
 import { ProductSpecification } from "./ProductSpecification";
 import { mockSpecifications } from "../../mockData";
 
-describe("Specifications", () => {
-  it("should render <Specifications /> component with the correct title", async () => {
+describe("ProductSpecifications", () => {
+  it("should render <ProductSpecifications /> component with the correct title", async () => {
     // Arrange
     const expectedText = "Specifications"
     render(
@@ -19,7 +19,7 @@ describe("Specifications", () => {
     const title = screen.getByText("Specifications");
     expect(title).toHaveTextContent(expectedText);
   });
-  it("should render <Specifications /> component with the correct data for a product specification", async () => {
+  it("should render <ProductSpecifications /> component with the correct data for a product specification", async () => {
     // Arrange
     render(
       <ProductSpecification

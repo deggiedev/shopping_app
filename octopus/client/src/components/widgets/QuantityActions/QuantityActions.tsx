@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { Box, Typography } from "@mui/material";
 import { theme } from "../../../theme";
+import { AddMinus } from "../../common/AddMinusButton";
 
 interface Props {
   quantity: number;
@@ -18,28 +17,11 @@ export const QuantityActions: React.FC<Props> = ({
   const { palette } = theme;
   return (
     <Box data-testid="quantity-actions">
-      <Typography sx={{ textAlign: "center", color: "#345689" }}>
+      <Typography sx={{ textAlign: "center", color: palette.text.blue }}>
         QTY
       </Typography>
       <Box display="flex" justifyContent="space-evenly">
-        <Button
-          onClick={handleDecrease}
-          aria-label="minus-button"
-          disableRipple
-          size="small"
-          variant="contained"
-          sx={{
-            textTransform: "none",
-            background: palette.background.middleBlue,
-            "&:hover": { background: palette.background.middleBlue},
-            color: palette.text.white,
-            marginRight: 1,
-            minWidth: 0,
-          }}
-        >
-          <RemoveIcon sx={{ fontSize: "large" }} />
-        </Button>
-
+        <AddMinus arial-label="minus" variant="minus" handleClick={handleDecrease}/>
         <Typography
           data-testid="quantity"
           sx={{
@@ -48,29 +30,13 @@ export const QuantityActions: React.FC<Props> = ({
             fontFamily: "Gotham",
             fontWeight: 900,
             color: palette.text.white,
-            minWidth: "45px",
+            minWidth: "40px",
             textAlign: "center",
           }}
         >
           {quantity}
         </Typography>
-
-        <Button
-          onClick={handleIncrease}
-          aria-label="plus-button"
-          size="small"
-          variant="contained"
-          sx={{
-            textTransform: "none",
-            background: palette.background.lightBlue,
-            "&:hover": { background: palette.background.lightBlue },
-            color: palette.text.white,
-            marginLeft: 1,
-            minWidth: 0,
-          }}
-        >
-          <AddIcon sx={{ fontSize: "large" }} />
-        </Button>
+        <AddMinus arial-label="add" variant="add" handleClick={handleIncrease}/>
       </Box>
     </Box>
   );
