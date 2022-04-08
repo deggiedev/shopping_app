@@ -5,6 +5,7 @@ import { Product } from "../../../types";
 import { formatPrice } from "../../../utils";
 import { Price } from "../Price";
 import { Button } from "../../surfaces/Button";
+import { theme } from "../../../theme";
 
 interface Props {
   product: Product;
@@ -24,7 +25,9 @@ export const AddToCart: React.FC<Props> = ({
 
   const handleClick = () => {
     handleAddToCart(product, quantity);
-  }
+  };
+
+  const { palette } = theme;
   return (
     <Box
       sx={{
@@ -33,8 +36,8 @@ export const AddToCart: React.FC<Props> = ({
         paddingX: 2,
         paddingBottom: 2.5,
         paddingTop: 1,
-        color: "white",
-        background: "#050f2a",
+        color: palette.text.white,
+        background: palette.background.darkBlue,
       }}
     >
       <Box
@@ -52,7 +55,7 @@ export const AddToCart: React.FC<Props> = ({
           handleDecrease={handleDecrease}
         />
       </Box>
-      <Button handleClick={handleClick}/>
+      <Button handleClick={handleClick} />
     </Box>
   );
 };

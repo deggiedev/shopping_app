@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   description: string | null;
 }
 export const Description: React.FC<Props> = ({ description }) => {
+  const { palette } = theme;
   return (
     <Box
       sx={{
@@ -24,7 +26,7 @@ export const Description: React.FC<Props> = ({ description }) => {
           fontWeight: 900,
           marginLeft: 2.5,
           marginBottom: 2,
-          color: "white",
+          color: palette.text.white,
         }}
       >
         Description
@@ -36,7 +38,7 @@ export const Description: React.FC<Props> = ({ description }) => {
           marginX: 2.5,
           marginBottom: 1,
           fontFamily: "Gotham",
-          color: "white",
+          color: palette.text.white,
         }}
       >
         {description}

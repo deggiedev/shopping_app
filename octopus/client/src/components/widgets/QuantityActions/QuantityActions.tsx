@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { theme } from "../../../theme";
 
 interface Props {
   quantity: number;
@@ -14,6 +15,7 @@ export const QuantityActions: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
 }) => {
+  const { palette } = theme;
   return (
     <Box data-testid="quantity-actions">
       <Typography sx={{ textAlign: "center", color: "#345689" }}>
@@ -30,14 +32,14 @@ export const QuantityActions: React.FC<Props> = ({
             textTransform: "none",
             background: "#1a2a43",
             "&:hover": { background: "#1a2a43" },
-            color: "white",
+            color: palette.text.white,
             marginRight: 1,
             minWidth: 0,
           }}
         >
           <RemoveIcon sx={{ fontSize: "large" }} />
         </Button>
-       
+
         <Typography
           data-testid="quantity"
           sx={{
@@ -45,14 +47,14 @@ export const QuantityActions: React.FC<Props> = ({
             fontSize: "30px",
             fontFamily: "Gotham",
             fontWeight: 900,
-            color: "white",
-            minWidth: '45px',
+            color: palette.text.white,
+            minWidth: "45px",
             textAlign: "center",
           }}
         >
           {quantity}
         </Typography>
-      
+
         <Button
           onClick={handleIncrease}
           aria-label="plus-button"
@@ -62,7 +64,7 @@ export const QuantityActions: React.FC<Props> = ({
             textTransform: "none",
             background: "#36598d",
             "&:hover": { background: "#36598d" },
-            color: "white",
+            color: palette.text.white,
             marginLeft: 1,
             minWidth: 0,
           }}

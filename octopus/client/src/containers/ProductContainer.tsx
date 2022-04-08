@@ -6,6 +6,7 @@ import { GET_PRODUCT } from "../graphql/queries";
 import { Product, CartItems, CartItem, Specification } from "../types";
 import { createCartItem } from "../utils/createCartItem";
 import { createSpecification } from "../utils";
+import { theme } from "../theme";
 
 export const ProductContainer: React.FC = () => {
   //state and hooks
@@ -13,7 +14,7 @@ export const ProductContainer: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [cartItems, setCartItems] = useState<CartItems>([]);
   const [specification, setSpecification] = useState<Specification>(null);
-
+  const { palette } = theme;
   // queries
   const [loadProduct, { loading }] = useLazyQuery(GET_PRODUCT, {
     variables: { productId: 1 },
@@ -42,7 +43,7 @@ export const ProductContainer: React.FC = () => {
   };
 
   const handleAddToCart = async (product: Product, quantity: number) => {
-    const cartItem = (await createCartItem(product, quantity));
+    const cartItem = await createCartItem(product, quantity);
     setCartItems([...(cartItems as CartItems), cartItem as CartItem]);
   };
 
@@ -60,7 +61,7 @@ export const ProductContainer: React.FC = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            background: "#050f2a",
+            background: palette.background.darkBlue,
           }}
         >
           <CircularProgress />

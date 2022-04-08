@@ -1,12 +1,13 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   title: string | null;
   subTitle?: string | null;
 }
 export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
-  
+  const { palette } = theme;
   const has = {
     subTitle: !!subTitle,
   };
@@ -31,7 +32,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
           fontFamily: "Gotham",
           fontWeight: 900,
           marginLeft: 3,
-          color: "white",
+          color: palette.text.white,
         }}
       >
         {title}
@@ -43,7 +44,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
             fontFamily: "Gotham",
             marginLeft: 3,
             marginTop: 1,
-            color: "#335689",
+            color: palette.text.blue,
           }}
         >
           {subTitle}
@@ -52,4 +53,3 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
     </Box>
   );
 };
-

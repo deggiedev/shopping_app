@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   price: { pounds: string; pence: string };
 }
 export const Price: React.FC<Props> = ({ price }) => {
+  const { palette } = theme;
   return (
     <Typography
       sx={{
@@ -12,7 +14,7 @@ export const Price: React.FC<Props> = ({ price }) => {
         fontSize: "40px",
         fontFamily: "Gotham",
         fontWeight: 900,
-        color: "white",
+        color: palette.text.white,
         marginTop: 2.5,
       }}
     >

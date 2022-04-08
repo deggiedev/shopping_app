@@ -1,12 +1,14 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 export const Footer: React.FC = () => {
+  const { palette } = theme;
   return (
     <Box
       sx={{
-        color: "#607695",
-        background: "#01193b",
+        color: palette.text.grey,
+        background: palette.background.blue,
         paddingLeft: 2,
         paddingRight: 3,
         paddingY: 3,

@@ -1,11 +1,13 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
-  handleClick: () =>  void;
+  handleClick: () => void;
 }
 
 export const CustomButton: React.FC<Props> = ({ handleClick }) => {
+  const { palette } = theme;
   return (
     <Box
       aria-label="add-to-cart"
@@ -18,7 +20,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
     >
       <Box
         sx={{
-          background: "#ff75b4",
+          background: palette.background.secondary,
           height: "50%",
           padding: 1.5,
           borderTopLeftRadius: "3px",
@@ -29,7 +31,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       <Button
         sx={{
           position: `absolute`,
-          color: "white",
+          color: palette.text.white,
           lineHeight: "1.25",
           fontSize: "24px",
           fontFamily: "Gotham",
@@ -43,7 +45,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       </Button>
       <Box
         sx={{
-          background: "#fb1a7b",
+          background: palette.background.primary,
           height: "50%",
           padding: 1.5,
           borderBottomLeftRadius: "3px",

@@ -1,17 +1,18 @@
 import React from "react";
 import { Box, CardMedia } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   imageUrl: string;
 }
 export const ProductImage: React.FC<Props> = ({ imageUrl }) => {
-
+  const { palette } = theme;
   return (
     <Box
       sx={{
         paddingX: 5,
         paddingBottom: 5,
-        background: "#050f2a",
+        background: palette.background.darkBlue,
         marginBottom: -8,
       }}
     >
