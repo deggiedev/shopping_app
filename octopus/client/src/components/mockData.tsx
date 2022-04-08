@@ -1,3 +1,5 @@
+import { Product, Specifications } from "../types";
+
 export const mockProduct = {
   id: "1",
   name: "Energy saving light bulb",
@@ -14,7 +16,7 @@ export const mockProduct = {
   modelCode: "E27 ES",
   colour: "Cool daylight",
   imgUrl: "https://i.ibb.co/2nzwxnQ/bulb.png",
-};
+} as Product;
 
 export const mockCompanyInfo = [
   {
@@ -31,17 +33,17 @@ export const mockCartItems = [
   { name: "bulb", price: 8, quantity: 5 },
 ];
 
-export const mockSubTitle = `${mockProduct.power} // Packet of ${mockProduct.quantity}.`;
+export const mockSubTitle = `${mockProduct?.power} // Packet of ${mockProduct?.quantity}.`;
 
-export const mockSpecifications = {
-  brand: "Philips",
-  weight: 77,
-  dimensions: "12.6x6.2x6.2",
-  modelNumber: "E27 ES",
-  colour: "cool daylight",
-};
+export const mockSpecifications = [
+  { brand: "Philips" },
+  { weight: 77 },
+  { dimensions: "12.6x6.2x6.2" },
+  { modelNumber: "E27 ES" },
+  { colour: "cool daylight" },
+] as Specifications;
 
 export const mockPrice = {
-  pounds: '12',
-  pence: '99',
-}
+  pounds: "12",
+  pence: "99",
+};

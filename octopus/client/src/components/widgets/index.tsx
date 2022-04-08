@@ -5,4 +5,4 @@ export { Header } from "./Header";
 export { ProductImage } from "./ProductImage";
 export { ProductTitle } from "./ProductTitle";
 export { QuantityActions } from "./QuantityActions";
-export { Specifications } from "./Specifications";
+export { ProductSpecification } from "./ProductSpecification";

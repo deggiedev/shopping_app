@@ -3,9 +3,9 @@ import { ProductView } from "../views";
 import { useLazyQuery } from "@apollo/client";
 import { Box, CircularProgress } from "@mui/material";
 import { GET_PRODUCT } from "../graphql/queries";
-import { Product, CartItems, CartItem, Specification } from "../types";
+import { Product, CartItems, CartItem, Specifications } from "../types";
 import { createCartItem } from "../utils/createCartItem";
-import { createSpecification } from "../utils";
+import { createSpecifications } from "../utils";
 import { theme } from "../theme";
 
 export const ProductContainer: React.FC = () => {
@@ -13,7 +13,7 @@ export const ProductContainer: React.FC = () => {
   const [product, setProduct] = useState<Product>(null);
   const [quantity, setQuantity] = useState<number>(1);
   const [cartItems, setCartItems] = useState<CartItems>([]);
-  const [specification, setSpecification] = useState<Specification>(null);
+  const [specifications, setSpecifications] = useState<Specifications>([]);
   const { palette } = theme;
   // queries
   const [loadProduct, { loading }] = useLazyQuery(GET_PRODUCT, {
@@ -24,8 +24,8 @@ export const ProductContainer: React.FC = () => {
       }
       if (data) {
         setProduct(data.product);
-        const specification = createSpecification(data.product);
-        setSpecification(specification);
+        const specifications = createSpecifications(data.product);
+        setSpecifications(specifications as Specifications);
       }
     },
   });
@@ -70,7 +70,7 @@ export const ProductContainer: React.FC = () => {
       {!loading && (
         <ProductView
           product={product}
-          specification={specification}
+          specifications={specifications}
           cartItems={cartItems}
           quantity={quantity}
           handleIncrease={handleIncrease}

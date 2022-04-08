@@ -6,13 +6,13 @@ import {
   AddToCart,
   Description,
   Footer,
-  Specifications,
+  ProductSpecification,
 } from "../components/widgets";
-import { CartItems, Product, Specification } from "../types";
+import { CartItems, Product, Specifications } from "../types";
 
 interface Props {
   product: Product;
-  specification: Specification;
+  specifications: Specifications;
   quantity: number;
   cartItems: CartItems;
   handleIncrease: () => void;
@@ -24,7 +24,7 @@ export const ProductView: React.FC<Props> = ({
   handleDecrease,
   handleAddToCart,
   product,
-  specification,
+  specifications,
   quantity,
   cartItems,
 }) => {
@@ -42,7 +42,7 @@ export const ProductView: React.FC<Props> = ({
         handleAddToCart={handleAddToCart}
       />
       <Description description={product?.description || null} />
-      <Specifications specification={specification} />
+      <ProductSpecification specifications={specifications} />
       <Footer />
     </Box>
   );
