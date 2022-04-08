@@ -4,7 +4,7 @@ import { Box, Container } from "@mui/material";
 export const Layout: React.FC = ({ children }) => {
   return (
     <Box sx={{ background: "#050f2a" }}>
-      <Container maxWidth="lg" disableGutters>
+      <Container sx={{ maxWidth: "lg" }} disableGutters>
         {children}
       </Container>
     </Box>

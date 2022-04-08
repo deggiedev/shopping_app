@@ -3,7 +3,7 @@ import { MockedProvider } from "@apollo/react-testing";
 import { screen, render, wait } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
-import { GET_PRODUCT } from "../src/graphql/queries";
+import { GET_PRODUCT } from "./graphql/typeDefs";
 
 const mocks = [
   {

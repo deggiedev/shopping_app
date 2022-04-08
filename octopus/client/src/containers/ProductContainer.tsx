@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ProductView } from "../views";
 import { useLazyQuery } from "@apollo/client";
 import { Box, CircularProgress } from "@mui/material";
-import { GET_PRODUCT } from "../graphql/queries";
+import { GET_PRODUCT } from "../graphql/typeDefs";
 import { Product, CartItems, CartItem, Specifications } from "../types";
 import { createCartItem } from "../utils/createCartItem";
 import { createSpecifications } from "../utils";

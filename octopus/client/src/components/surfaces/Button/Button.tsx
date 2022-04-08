@@ -1,22 +1,23 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 import { theme } from "../../../theme";
+import { ButtonSection } from "./ButtonSection/ButtonSection";
 
 interface Props {
   handleClick: () => void;
 }
 
 export const CustomButton: React.FC<Props> = ({ handleClick }) => {
-  const { palette, breakpoints } = theme;
+  const { palette } = theme;
+
   return (
     <Box
-      aria-label="add-to-cart"
       onClick={handleClick}
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         position: "relative",
         marginX: 4,
         marginTop: 2,
@@ -26,16 +27,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
         },
       }}
     >
-      <Box
-        sx={{
-          background: palette.background.secondary,
-          height: "50%",
-          padding: 1.5,
-          borderTopLeftRadius: "3px",
-          borderTopRightRadius: "3px",
-          width: "100%",
-        }}
-      ></Box>
+      <ButtonSection variant={"top"} />
       <Button
         sx={{
           position: `absolute`,
@@ -51,16 +43,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       >
         Add to cart
       </Button>
-      <Box
-        sx={{
-          background: palette.background.primary,
-          height: "50%",
-          padding: 1.5,
-          borderBottomLeftRadius: "3px",
-          borderBottomRightRadius: "3px",
-          width: "100%",
-        }}
-      ></Box>
+      <ButtonSection variant={"bottom"} />
     </Box>
   );
 };
