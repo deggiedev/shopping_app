@@ -1,3 +1,5 @@
+**Server**
+
 1) cd octopus/server
 
 2) install Python 3.9.12 (this version should be your default python3 version)
@@ -12,3 +14,10 @@ source venv/bin/activate
 6) ./manage.py loaddata products
 
 7) ./manage.py runserver 8000
+
+**Frontend**
+1) git clone <repository name>
+  
+2) yarn install
+  
+3) yarn start
