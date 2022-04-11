@@ -15,8 +15,6 @@ export const ProductSpecification: React.FC<Props> = ({ specifications }) => {
       <Typography
         variant="h6"
         sx={{
-          lineHeight: "1.25",
-          fontWeight: 900,
           marginLeft: 2.5,
           color: "white",
         }}

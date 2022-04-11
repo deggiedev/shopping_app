@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { theme } from "../../../../theme";
 
 interface Props {
   variant: string;
@@ -10,15 +11,15 @@ export const ButtonSection: React.FC<Props> = ({ variant }) => {
     topVariant: variant === "top",
     bottomVariant: variant === "bottom",
   };
-
+  const { palette } = theme;
   return (
     <Box
       aria-label={"button-section"}
       sx={{
         background: [
           is.topVariant
-            ? "#ff75b4"
-            : "#fb1a7b",
+            ? palette.success.light
+            : palette.success.main,
         ],
         height: "50%",
         padding: 1.5,
