@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout } from "./components/layout";
-import { ProductContainer } from "./containers/ProductContainer";
+import { ProductContainer } from "./containers";
+
 
 const App = () => {
   return (

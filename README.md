@@ -36,7 +36,6 @@ to keep things simple.
 virtualenv env
 source env/bin/activate
 ```
-
 Now we can install our dependencies:
 
 ```bash

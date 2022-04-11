@@ -2,10 +2,10 @@ import React from "react";
 import { Box } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
 import { Product } from "../../../types";
-import { formatPrice } from "../../../utils";
 import { Price } from "../Price";
 import { Button } from "../../common/Button";
 import { theme } from "../../../theme";
+import { formatPrice } from "../../../utils";
 
 interface Props {
   product: Product;

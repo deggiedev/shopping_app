@@ -6,8 +6,8 @@ import { mockProduct } from '../../mockData';
 describe('ProductImage', () => {
   it('should render Header component with octopus logo and basket icon', async () => {
     // Arrange
-    const expectedUrl = mockProduct.imgUrl
-    render(<ProductImage imageUrl={mockProduct.imgUrl}></ProductImage>);
+    const expectedUrl = mockProduct?.imgUrl;
+    render(<ProductImage imageUrl={mockProduct?.imgUrl!}></ProductImage>);
 
     // Act
 

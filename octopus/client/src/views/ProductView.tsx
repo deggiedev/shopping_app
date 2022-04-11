@@ -7,8 +7,8 @@ import {
   Description,
   Footer,
   ProductSpecification,
-} from "../components/widgets";
-import { CartItems, Product, Specifications } from "../types";
+} from "../../../client/src/components/widgets";
+import { CartItems, Product, Specifications } from "../../../client/src/types";
 
 interface Props {
   product: Product;

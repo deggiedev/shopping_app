@@ -1,6 +1,6 @@
 import React from "react";
 import { MockedProvider } from "@apollo/react-testing";
-import { screen, render, wait } from "@testing-library/react";
+import { screen, render  } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
 import { GET_PRODUCT } from "./graphql/typeDefs";
@@ -52,7 +52,7 @@ describe("App", () => {
     const plusButton = screen.getByLabelText("add");
     userEvent.click(plusButton);
     const quantity = screen.getByTestId("quantity");
-    expect(quantity).toHaveTextContent(2);
+    expect(quantity).toHaveTextContent('2'); //check
   });
 
   test("should be able to decrease product quantity", async () => {
@@ -73,7 +73,7 @@ describe("App", () => {
     const minusButton = screen.getByLabelText("minus");
     userEvent.click(minusButton);
     const quantity = screen.getByTestId("quantity");
-    expect(quantity).toHaveTextContent(1);
+    expect(quantity).toHaveTextContent('1'); //check
   });
 
   test("should be able to add items to the basket", async () => {
@@ -90,6 +90,6 @@ describe("App", () => {
     const addToCartButton = screen.getByText('Add to cart');
     await userEvent.click(addToCartButton);
     const badge = screen.getByTestId("badge");
-    expect(badge).toHaveTextContent(1);
+    expect(badge).toHaveTextContent('1');
   });
 });

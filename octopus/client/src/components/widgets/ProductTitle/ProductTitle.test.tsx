@@ -9,7 +9,7 @@ describe("Product Title", () => {
     
     render(
       <ProductTitle
-        title={mockProduct.name}
+        title={mockProduct?.name!} // check
         subTitle={mockSubTitle}
       ></ProductTitle>
     );
@@ -17,7 +17,7 @@ describe("Product Title", () => {
     // Act
 
     // Assert
-    const title = screen.getByText(mockProduct.name);
+    const title = screen.getByText(mockProduct?.name!); // check
     const subTitle = screen.getByText(mockSubTitle);
     expect(title).toBeInTheDocument();
     expect(subTitle).toBeInTheDocument();
