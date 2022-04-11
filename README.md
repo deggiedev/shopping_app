@@ -16,7 +16,7 @@ source venv/bin/activate
 7) ./manage.py runserver 8000
 
 **Frontend**
-1) git clone <repository name>
+1) clone the repository
   
 2) yarn install
   
