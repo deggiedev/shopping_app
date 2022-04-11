@@ -1,3 +1,5 @@
+First clone the repo
+
 **Server**
 
 1) cd octopus/server
@@ -16,8 +18,7 @@ source venv/bin/activate
 7) ./manage.py runserver 8000
 
 **Frontend**
-1) clone the repository
   
-2) yarn install
+1) yarn install
   
-3) yarn start
+2) yarn start
