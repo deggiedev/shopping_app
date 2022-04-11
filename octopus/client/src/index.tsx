@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import './index.scss';
+import "./index.scss";
+import { theme } from "./theme";
+import { ThemeProvider } from "@mui/material";
 
 const client = new ApolloClient({
   uri: "http://127.0.0.1:8000/graphql",
@@ -14,7 +16,9 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </ApolloProvider>
   </React.StrictMode>,
   rootElement

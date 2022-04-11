@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { theme } from "../../../theme";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
@@ -10,7 +9,6 @@ interface Props {
 }
 
 export const AddMinus: React.FC<Props> = ({ variant, handleClick }) => {
-  const { palette } = theme;
   const is = {
     addButton: variant === "add",
     minusButton: variant === "minus",
@@ -24,9 +22,9 @@ export const AddMinus: React.FC<Props> = ({ variant, handleClick }) => {
       variant="contained"
       sx={{
         textTransform: "none",
-        background: [is.addButton ? palette.background.lightBlue : palette.background.middleBlue],
-        "&:hover": { background: palette.background.lightBlue },
-        color: palette.text.white,
+        background: [is.addButton ? "#36598d" : "#1a2a43"],
+        "&:hover": { background: "#36598d" },
+        color: "white",
         minWidth: 0,
       }}
     >

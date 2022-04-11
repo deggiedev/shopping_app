@@ -1,13 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { theme } from "../../../../theme";
 
 interface Props {
   variant: string;
 }
 
 export const ButtonSection: React.FC<Props> = ({ variant }) => {
-  const { palette } = theme;
   const is = {
     topVariant: variant === "top",
     bottomVariant: variant === "bottom",
@@ -19,8 +17,8 @@ export const ButtonSection: React.FC<Props> = ({ variant }) => {
       sx={{
         background: [
           is.topVariant
-            ? palette.background.secondary
-            : palette.background.primary,
+            ? "#ff75b4"
+            : "#fb1a7b",
         ],
         height: "50%",
         padding: 1.5,

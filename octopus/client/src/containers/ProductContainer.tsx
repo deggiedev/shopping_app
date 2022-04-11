@@ -62,7 +62,7 @@ export const ProductContainer: React.FC = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            background: palette.background.darkBlue,
+            background: palette.primary.main,
           }}
         >
           <CircularProgress />

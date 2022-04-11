@@ -8,7 +8,6 @@ interface Props {
 }
 
 export const CustomButton: React.FC<Props> = ({ handleClick }) => {
-  const { palette } = theme;
 
   return (
     <Box
@@ -31,10 +30,9 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       <Button
         sx={{
           position: `absolute`,
-          color: palette.text.white,
+          color: "white",
           lineHeight: "1.25",
           fontSize: "24px",
-          fontFamily: "Gotham",
           fontWeight: 900,
           textTransform: "none",
           width: "100%",

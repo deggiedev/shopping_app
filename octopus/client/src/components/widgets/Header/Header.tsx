@@ -23,11 +23,11 @@ export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
           paddingTop: 1,
           display: "flex",
           width: "100%",
-          background: palette.background.darkBlue,
+          background: palette.primary.main,
         }}
       >
         <SvgIcon
-          sx={{ marginY: 1, width: 200, color: palette.text.white }}
+          sx={{ marginY: 1, width: 200, color: "white" }}
           viewBox="0 0 470.6667 70"
         >
           <OctopusLogo />
@@ -36,15 +36,24 @@ export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
           invisible={!has.cartItem}
           badgeContent={<Box data-testid="badge">{totalCartItems}</Box>}
           color={"primary"}
-          sx={{ marginY: 0.75, marginX: 2, marginLeft: "auto", color: palette.text.white }}
+          sx={{
+            marginY: 0.75,
+            marginX: 2,
+            marginLeft: "auto",
+            color: "white",
+          }}
         >
           <SvgIcon>
             <BasketIcon />
           </SvgIcon>
         </Badge>
       </Box>
-      <Box display="flex" justifyContent="center" sx={{background: palette.background.darkBlue}}>
-      <ProductImage imageUrl={imageUrl} />
+      <Box
+        display="flex"
+        justifyContent="center"
+        sx={{ background: palette.primary.main }}
+      >
+        <ProductImage imageUrl={imageUrl} />
       </Box>
     </Box>
   );

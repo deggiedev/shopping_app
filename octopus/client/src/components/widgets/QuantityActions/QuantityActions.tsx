@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { theme } from "../../../theme";
 import { AddMinus } from "../../common/AddMinusButton";
 
 interface Props {
@@ -14,10 +13,9 @@ export const QuantityActions: React.FC<Props> = ({
   handleIncrease,
   handleDecrease,
 }) => {
-  const { palette } = theme;
   return (
     <Box data-testid="quantity-actions">
-      <Typography sx={{ textAlign: "center", color: palette.text.blue }}>
+      <Typography sx={{ textAlign: "center", color: "#335689" }}>
         QTY
       </Typography>
       <Box display="flex" justifyContent="space-evenly">
@@ -27,9 +25,8 @@ export const QuantityActions: React.FC<Props> = ({
           sx={{
             lineHeight: "1.25",
             fontSize: "30px",
-            fontFamily: "Gotham",
             fontWeight: 900,
-            color: palette.text.white,
+            color: "white",
             minWidth: "40px",
             textAlign: "center",
           }}

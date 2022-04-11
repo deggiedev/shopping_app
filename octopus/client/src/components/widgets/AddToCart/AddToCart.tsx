@@ -36,8 +36,8 @@ export const AddToCart: React.FC<Props> = ({
         paddingX: 2,
         paddingBottom: 2.5,
         paddingTop: 1,
-        color: palette.text.white,
-        background: palette.background.darkBlue,
+        color: "white",
+        background: palette.primary.main,
       }}
     >
       <Box
