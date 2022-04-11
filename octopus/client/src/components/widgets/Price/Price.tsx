@@ -9,7 +9,7 @@ export const Price: React.FC<Props> = ({ price }) => {
     <Typography
       sx={{
         lineHeight: "1.25",
-        fontSize: "40px",
+        fontSize: "36px",
         fontWeight: 900,
         color: "white",
         marginTop: 2.5,
@@ -17,7 +17,7 @@ export const Price: React.FC<Props> = ({ price }) => {
     >
       <Box display="flex">
         <Box>{price?.pounds}</Box>
-        <Box sx={{ marginTop: 0.5 }} fontSize={"25px"}>
+        <Box sx={{ marginTop: 0.3 }} fontSize={"25px"}>
           {`.${price?.pence}`}
         </Box>
       </Box>

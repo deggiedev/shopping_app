@@ -20,6 +20,7 @@ export const Description: React.FC<Props> = ({ description }) => {
         variant="h6"
         sx={{
           lineHeight: "1.25",
+          letterSpacing: 1,
           fontWeight: 900,
           marginLeft: 2.5,
           marginBottom: 2,

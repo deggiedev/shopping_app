@@ -5,6 +5,7 @@ import { ProductImage } from "../ProductImage";
 import { CartItems } from "../../../types";
 import { theme } from "../../../theme";
 
+
 interface Props {
   cartItems: CartItems;
   imageUrl: string | "";
@@ -35,7 +36,7 @@ export const Header: React.FC<Props> = ({ cartItems, imageUrl }) => {
         <Badge
           invisible={!has.cartItem}
           badgeContent={<Box data-testid="badge">{totalCartItems}</Box>}
-          color={"primary"}
+          color={"success"}
           sx={{
             marginY: 0.75,
             marginX: 2,

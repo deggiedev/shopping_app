@@ -3,11 +3,11 @@ import { Product } from "../../../client/src/types/Product";
 export const createSpecifications = (product: Product) => {
   if (product) {
     return [
-      { brand: product.brand },
-      { weight: product.weight },
-      { dimensions: `${product.height}x${product.width}x${product.length}` },
-      { modelNumber: product.modelCode },
-      { colour: product.colour },
+      { "Brand": product.brand },
+      { "Item weight": product.weight },
+      { "Dimensions": `${product.height}x${product.width}x${product.length}` },
+      { "Item Model Number": product.modelCode },
+      { "Colour": product.colour },
     ];
   } else {
     return
