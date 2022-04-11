@@ -7,20 +7,19 @@ interface Props {
 }
 
 export const ButtonSection: React.FC<Props> = ({ variant }) => {
-  const { palette } = theme;
   const is = {
     topVariant: variant === "top",
     bottomVariant: variant === "bottom",
   };
-
+  const { palette } = theme;
   return (
     <Box
       aria-label={"button-section"}
       sx={{
         background: [
           is.topVariant
-            ? palette.background.secondary
-            : palette.background.primary,
+            ? palette.success.light
+            : palette.success.main,
         ],
         height: "50%",
         padding: 1.5,

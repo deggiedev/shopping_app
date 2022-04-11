@@ -12,7 +12,7 @@ export const ProductImage: React.FC<Props> = ({ imageUrl = "" }) => {
       display="flex"
       justifyContent="center"
       sx={{
-        background: palette.background.darkBlue,
+        background: palette.primary.main,
         [theme.breakpoints.up("lg")]: { justifyContent: "left" },
       }}
     >

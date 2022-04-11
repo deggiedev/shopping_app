@@ -20,8 +20,8 @@ export const CustomTable: React.FC<Props> = ({ data }) => {
   return (
     <Table
       sx={{
-        color: palette.text.white,
-        background: palette.background.darkBlue,
+        color: "white",
+        background: palette.primary.main,
       }}
       aria-label="specification-table"
     >
@@ -31,9 +31,8 @@ export const CustomTable: React.FC<Props> = ({ data }) => {
             <TableRow key={idx}>
               <TableCell
                 sx={{
-                  color: palette.text.white,
+                  color: "white",
                   borderBottom: "none",
-                  fontFamily: "Gotham",
                   padding: 0,
                 }}
               >
@@ -41,9 +40,8 @@ export const CustomTable: React.FC<Props> = ({ data }) => {
               </TableCell>
               <TableCell
                 sx={{
-                  color: palette.text.white,
+                  color: "white",
                   borderBottom: "none",
-                  fontFamily: "Gotham",
                   padding: 0,
                 }}
               >

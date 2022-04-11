@@ -1,35 +1,26 @@
-import { createTheme } from "@mui/system";
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: ["Gotham", "helvetica", "arial", "sans-serif"].join(","),
+    h2: {
+      lineHeight: "1.25",
+      fontSize: "30px",
+      fontWeight: 900,
+    },
+    h6: {
+      lineHeight: "1.25",
+      fontWeight: 700,
+      letterSpacing: 1,
+    },
+  },
   palette: {
-    background: {
-      primary: "#fb1a7b",
-      secondary: "#ff75b4",
-      blue: "#01193b",
-      darkBlue: "#050f2a",
-      middleBlue: "#1a2a43",
-      lightBlue: "#36598d",
-    },
-    text: {
-      white: "#fff",
-      blue: "#335689",
-      grey: "#607695",
-    },
-    action: {
-      active: "#001E3C",
-    },
+    primary: { main: "#050f2a" },
+    secondary: { main: "#01193b" },
+    info: { main: "#607695" },
     success: {
-      dark: "#009688",
+      main: "#fb1a7b",
+      light: "#ff75b4",
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
-
 });
