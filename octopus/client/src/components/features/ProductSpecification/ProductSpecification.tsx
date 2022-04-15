@@ -2,7 +2,8 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { Specifications } from "../../../types";
 import { theme } from "../../../theme";
-import { Table } from "../../common/Table";
+import { Table } from "../../common";
+
 
 interface Props {
   specifications: Specifications;

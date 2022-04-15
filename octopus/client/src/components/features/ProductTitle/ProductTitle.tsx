@@ -26,7 +26,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
       }}
     >
       <Typography
-        variant={"h2"}
+        variant={"h3"}
         sx={{
           marginLeft: 3,
           color: "white",

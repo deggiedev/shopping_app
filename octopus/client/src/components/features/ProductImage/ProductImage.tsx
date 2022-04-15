@@ -9,11 +9,10 @@ export const ProductImage: React.FC<Props> = ({ imageUrl = "" }) => {
   const { palette } = theme;
   return (
     <Box
-      display="flex"
-      justifyContent="center"
       sx={{
+        display: "flex",
+        justifyContent: "center",
         background: palette.primary.main,
-        [theme.breakpoints.up("lg")]: { justifyContent: "left" },
       }}
     >
       <CardMedia

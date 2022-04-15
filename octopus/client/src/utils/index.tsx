@@ -1,2 +1,3 @@
 export { createSpecifications } from "./createSpecifications";
-export { formatPrice } from "./formatPrice";
+// export { formatPrice, styledPrice } from "./Price";
+export {formatPrice, styledPrice} from "./Pricing"

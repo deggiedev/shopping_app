@@ -5,6 +5,11 @@ export const theme = createTheme({
     fontFamily: ["Gotham", "helvetica", "arial", "sans-serif"].join(","),
     h2: {
       lineHeight: "1.25",
+      fontSize: "36px",
+      fontWeight: 900,
+    },
+    h3: {
+      lineHeight: "1.25",
       letterSpacing: 1,
       fontSize: "32px",
       fontWeight: 900,

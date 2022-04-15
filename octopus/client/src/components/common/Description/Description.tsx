@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   description: string | null;
 }
 export const Description: React.FC<Props> = ({ description }) => {
+  const { palette } = theme;
   return (
     <Box
       sx={{
@@ -13,13 +15,12 @@ export const Description: React.FC<Props> = ({ description }) => {
         alingContent: "center",
         justifyContent: "center",
         padding: 2,
-        background: `#01193b`,
+        background: palette.secondary.main,
       }}
     >
       <Typography
         variant="h6"
         sx={{
-        
           marginLeft: 2.5,
           marginBottom: 2,
           color: "white",

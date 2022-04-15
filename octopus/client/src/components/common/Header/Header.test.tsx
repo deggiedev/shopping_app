@@ -1,6 +1,7 @@
-import React from "react";
 import { screen, render } from "@testing-library/react";
 import { Header } from "./Header";
+import { OctopusLogo } from "../../../assets";
+import { ShoppingCart } from "../../features/ShoppingCart.tsx";
 import { mockCartItems } from "../../mockData";
 
 describe("Header", () => {
@@ -8,7 +9,10 @@ describe("Header", () => {
     // Arrange
 
     render(
-      <Header cartItems={mockCartItems} imageUrl={""}></Header>
+      <Header
+        iconLeft={<OctopusLogo/>}
+        iconRight={<ShoppingCart cartItems={mockCartItems}></ShoppingCart>}
+      ></Header>
     );
 
     // Act

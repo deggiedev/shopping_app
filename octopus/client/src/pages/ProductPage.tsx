@@ -8,7 +8,7 @@ import { ProductView } from "../views";
 import { createSpecifications } from "../utils";
 import { createCartItem } from "../utils/createCartItem";
 
-export const ProductContainer: React.FC = () => {
+export const ProductPage: React.FC = () => {
   //state and hooks
   const [product, setProduct] = useState<Product>(null);
   const [quantity, setQuantity] = useState<number>(1);

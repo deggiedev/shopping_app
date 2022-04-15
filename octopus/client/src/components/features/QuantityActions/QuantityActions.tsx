@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { AddMinus } from "../../common/AddMinusButton";
+import { AddMinus } from "../../common";
 
 interface Props {
   quantity: number;

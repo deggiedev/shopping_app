@@ -3,9 +3,9 @@ import { Box } from "@mui/material";
 import { QuantityActions } from "../QuantityActions";
 import { Product } from "../../../types";
 import { Price } from "../Price";
-import { Button } from "../../common/Button";
 import { theme } from "../../../theme";
 import { formatPrice } from "../../../utils";
+import { Button } from "../../common";
 
 interface Props {
   product: Product;
