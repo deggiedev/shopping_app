@@ -23,6 +23,10 @@ source venv/bin/activate
   
 2) yarn start
 
+**Run Frontend Tests**
+
+1) yarn test
+
 **Storybook**
 
 1) yarn storybook
