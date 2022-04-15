@@ -1,14 +1,17 @@
 import React from "react";
 import { Box } from "@mui/material";
 import {
-  Header,
-  ProductTitle,
   AddToCart,
   Description,
   Footer,
+  Header,
+  ProductImage,
   ProductSpecification,
-} from "../../../client/src/components/widgets";
-import { CartItems, Product, Specifications } from "../../../client/src/types";
+  ProductTitle,
+} from "../components/features";
+import { CartItems, Product, Specifications } from "../types";
+import { OctopusLogo } from "../assets";
+import { ShoppingCart } from "../components/features/ShoppingCart.tsx";
 
 interface Props {
   product: Product;
@@ -32,7 +35,11 @@ export const ProductView: React.FC<Props> = ({
 
   return (
     <Box>
-      <Header cartItems={cartItems} imageUrl={product?.imgUrl || ""}></Header>
+      <Header
+        iconLeft={<OctopusLogo />}
+        iconRight={<ShoppingCart cartItems={cartItems}></ShoppingCart>}
+      ></Header>
+      <ProductImage imageUrl={product?.imgUrl || ""} />
       <ProductTitle title={product?.name || null} subTitle={subTitle || null} />
       <AddToCart
         product={product}

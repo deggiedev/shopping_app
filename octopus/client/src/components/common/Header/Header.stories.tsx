@@ -1,0 +1,11 @@
+import { BasketIcon, OctopusLogo } from "../../../assets";
+import { Header } from "./Header";
+
+export default {
+  title: "Header",
+  component: Header,
+};
+
+export const Default = () => (
+  <Header iconLeft={<OctopusLogo />} />
+);
