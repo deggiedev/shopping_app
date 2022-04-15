@@ -1,14 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import {
-  Header,
-  ProductTitle,
-  AddToCart,
-  Description,
-  Footer,
-  ProductSpecification,
-} from "../../../client/src/components/widgets";
-import { CartItems, Product, Specifications } from "../../../client/src/types";
+import { AddToCart, Description, Footer, Header, ProductSpecification, ProductTitle } from "../components/widgets";
+import { CartItems, Product, Specifications } from "../types";
 
 interface Props {
   product: Product;
@@ -33,7 +26,7 @@ export const ProductView: React.FC<Props> = ({
   return (
     <Box>
       <Header cartItems={cartItems} imageUrl={product?.imgUrl || ""}></Header>
-      <ProductTitle title={product?.name || null} subTitle={subTitle || null} />
+      <ProductTitle title={product?.name || null} subTitle={subTitle} />
       <AddToCart
         product={product}
         quantity={quantity}

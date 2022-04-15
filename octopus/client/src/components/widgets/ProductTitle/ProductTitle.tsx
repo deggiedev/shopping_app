@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { theme } from "../../../theme";
 
 interface Props {
   title: string | null;
@@ -9,6 +10,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
   const has = {
     subTitle: !!subTitle,
   };
+  const { palette } = theme;
 
   return (
     <Box
@@ -20,11 +22,11 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
         paddingTop: 5,
         paddingBottom: 2,
         paddingX: 1.5,
-        background: `#01193b`,
+        background: palette.secondary.main,
       }}
     >
       <Typography
-      variant={"h2"}
+        variant={"h2"}
         sx={{
           marginLeft: 3,
           color: "white",
@@ -38,7 +40,7 @@ export const ProductTitle: React.FC<Props> = ({ title, subTitle }) => {
           sx={{
             marginLeft: 3,
             marginTop: 1,
-            color: "#335689",
+            color: "info.dark",
           }}
         >
           {subTitle}

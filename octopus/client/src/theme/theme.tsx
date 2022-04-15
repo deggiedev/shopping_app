@@ -5,7 +5,8 @@ export const theme = createTheme({
     fontFamily: ["Gotham", "helvetica", "arial", "sans-serif"].join(","),
     h2: {
       lineHeight: "1.25",
-      fontSize: "30px",
+      letterSpacing: 1,
+      fontSize: "32px",
       fontWeight: 900,
     },
     h6: {
@@ -17,7 +18,7 @@ export const theme = createTheme({
   palette: {
     primary: { main: "#050f2a" },
     secondary: { main: "#01193b" },
-    info: { main: "#607695" },
+    info: { main: "#607695", dark: "#335689" },
     success: {
       main: "#fb1a7b",
       light: "#ff75b4",
