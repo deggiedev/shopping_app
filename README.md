@@ -22,3 +22,7 @@ source venv/bin/activate
 1) yarn install
   
 2) yarn start
+
+**Storybook**
+
+1) yarn storybook
