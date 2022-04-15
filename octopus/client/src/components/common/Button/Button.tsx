@@ -4,15 +4,19 @@ import { theme } from "../../../theme";
 import { ButtonSection } from "./ButtonSection/ButtonSection";
 
 interface Props {
+  color?: string;
   handleClick: () => void;
 }
 
-export const CustomButton: React.FC<Props> = ({ handleClick }) => {
-
+export const CustomButton: React.FC<Props> = ({ handleClick, color }) => {
+  const has = {
+    color: !!color,
+  };
   return (
     <Box
       onClick={handleClick}
       sx={{
+        background: color,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -41,7 +45,7 @@ export const CustomButton: React.FC<Props> = ({ handleClick }) => {
       >
         Add to cart
       </Button>
-      <ButtonSection variant={"bottom"} />
+      {!has.color && <ButtonSection variant={"bottom"} />}
     </Box>
   );
 };
