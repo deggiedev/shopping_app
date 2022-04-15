@@ -15,7 +15,7 @@ export const QuantityActions: React.FC<Props> = ({
 }) => {
   return (
     <Box data-testid="quantity-actions">
-      <Typography sx={{ textAlign: "center", color: "#335689" }}>
+      <Typography sx={{ textAlign: "center", color: "info.dark" }}>
         QTY
       </Typography>
       <Box display="flex" justifyContent="space-evenly">

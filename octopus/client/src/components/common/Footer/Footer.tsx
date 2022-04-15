@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
     <Box
       sx={{
         color: palette.info.main,
-        background: "#01193b",
+        background: palette.secondary.main,
         paddingLeft: 2,
         paddingRight: 3,
         paddingY: 3,

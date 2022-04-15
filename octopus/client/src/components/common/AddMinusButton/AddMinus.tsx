@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { theme } from "../../../theme";
 
 interface Props {
   variant: string;
@@ -13,6 +14,7 @@ export const AddMinus: React.FC<Props> = ({ variant, handleClick }) => {
     addButton: variant === "add",
     minusButton: variant === "minus",
   };
+  const { palette } = theme;
 
   return (
     <Button
@@ -22,13 +24,15 @@ export const AddMinus: React.FC<Props> = ({ variant, handleClick }) => {
       variant="contained"
       sx={{
         textTransform: "none",
-        background: [is.addButton ? "#36598d" : "#1a2a43"],
-        "&:hover": { background: "#36598d" },
+        background: [
+          is.addButton ? palette.secondary.light : palette.primary.light,
+        ],
+        "&:hover": { background: palette.secondary.light },
         color: "white",
         minWidth: 0,
       }}
     >
-      {is.minusButton && <RemoveIcon sx={{ fontSize: "large" }}  />}
+      {is.minusButton && <RemoveIcon sx={{ fontSize: "large" }} />}
       {is.addButton && <AddIcon sx={{ fontSize: "large" }} />}
     </Button>
   );
